@@ -15,6 +15,10 @@
      Background="{DynamicResource MaterialDesignPaper}"
      FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
-        
+        <Frame Background="White" x:Name="frame" NavigationUIVisibility="Hidden">
+
+            
+
+        </Frame>
     </Grid>
 </Window>

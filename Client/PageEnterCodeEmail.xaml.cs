@@ -16,17 +16,18 @@ using System.Windows.Shapes;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для PageEnterCodeEmail.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageEnterCodeEmail : Page
     {
-        public MainWindow()
+        public PageEnterCodeEmail()
         {
             InitializeComponent();
+        }
 
-            frame.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
-            //frame
-          
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
         }
     }
 }
