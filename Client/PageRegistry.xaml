@@ -89,7 +89,26 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <DatePicker Grid.Row="2" Grid.ColumnSpan="2" Foreground="White" FontSize="30" 
+        <TextBox Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center"  Margin="5"
+              x:Name="tbNickName"
+              Foreground="White" 
+                 FontSize="25"
+              materialDesign:ValidationAssist.Background="Transparent"   
+              materialDesign:HintAssist.Hint="Nickname"
+              materialDesign:HintAssist.HelperText="">
+
+            <TextBox.Text>
+                <Binding
+                    Path="Nickname"
+                    UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ValidationRuleNameSurname
+                              ValidatesOnTargetUpdated="True"  xmlns:domain="clr-namespace:Client" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <DatePicker Grid.Row="3" Grid.ColumnSpan="2" Foreground="White" FontSize="30" 
                 x:Name="FutureDatePicker"
                 materialDesign:HintAssist.Hint="Date"
                 materialDesign:CalendarAssist.IsHeaderVisible="False"

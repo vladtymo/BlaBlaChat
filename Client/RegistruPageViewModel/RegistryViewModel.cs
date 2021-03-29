@@ -33,24 +33,13 @@ namespace Client
             get => _surname;
             set => SetProperty(ref _surname, value);
         }
-        private string? _month;
-        public string? Month
+        private string? _nickname;
+        public string? Nickname
         {
-            get => _month;
-            set => SetProperty(ref _month, value);
+            get => _nickname;
+            set => SetProperty(ref _nickname, value);
         }
-        private string? _day;
-        public string? Day
-        {
-            get => _day;
-            set => SetProperty(ref _day, value);
-        }
-        private string? _year;
-        public string? Year
-        {
-            get => _year;
-            set => SetProperty(ref _year, value);
-        }
+
         private DateTime? _validatingDate;
         public DateTime? ValidatingDate
         {
