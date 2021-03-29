@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,17 +17,23 @@ using System.Windows.Shapes;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для PageEnterCodeEmail.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageEnterCodeEmail : Page
     {
-        public MainWindow()
+        
+        
+        public PageEnterCodeEmail()
         {
             InitializeComponent();
+            // this.DataContext = new ViewModel();
+           // StartTimer();
 
-            frame.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
-            //frame
-          
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
         }
     }
 }
