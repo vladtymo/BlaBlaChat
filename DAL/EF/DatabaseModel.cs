@@ -5,9 +5,9 @@ namespace Dal
     using System.Data.Entity;
     using System.Linq;
 
-    public class DatabaseModel : DbContext
+    public class ChatDatabaseModel : DbContext
     {
-        public DatabaseModel()
+        public ChatDatabaseModel()
             : base("Data Source=den1.mssql7.gear.host;Initial Catalog=blablachatdb;Persist Security Info=True;User ID=blablachatdb;Password=Zo848Ut-j87~")
         {
             Database.SetInitializer(new Initializer());

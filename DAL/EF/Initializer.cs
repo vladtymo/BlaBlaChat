@@ -7,9 +7,9 @@ using System.Data.Entity;
 
 namespace Dal
 {
-    internal class Initializer : DropCreateDatabaseIfModelChanges<DatabaseModel>
+    internal class Initializer : DropCreateDatabaseIfModelChanges<ChatDatabaseModel>
     {
-        protected override void Seed(DatabaseModel context)
+        protected override void Seed(ChatDatabaseModel context)
         {
             base.Seed(context);
         }
