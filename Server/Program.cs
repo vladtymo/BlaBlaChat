@@ -12,7 +12,7 @@ namespace Server
     {
         public static void Main(string[] args)
         {
-            ////test DB
+            //test DB
             //foreach (var user in new Dal.DatabaseModel().Users.ToList())
             //{
             //    Console.WriteLine(user.Email);
