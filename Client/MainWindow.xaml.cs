@@ -23,10 +23,6 @@ namespace Client
         public MainWindow()
         {
             InitializeComponent();
-
-
-            frame.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
-            
         }
     }
 }
