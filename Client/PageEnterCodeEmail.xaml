@@ -34,7 +34,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Column="0" Grid.Row="3">
-                <TextBox Margin="130,15,130,0" BorderBrush="AliceBlue" CaretBrush="AliceBlue" Foreground="AliceBlue"/>
+                <TextBox x:Name="tbBox" Margin="130,15,130,0" BorderBrush="AliceBlue" Foreground="AliceBlue"/>
             </StackPanel>
 
             <StackPanel Grid.Column="0" Grid.Row="4">

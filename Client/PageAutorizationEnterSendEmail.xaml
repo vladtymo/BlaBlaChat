@@ -37,12 +37,12 @@
         
 
 
-        <StackPanel Grid.Column="0" Grid.Row="3">
+            <StackPanel Grid.Column="0" Grid.Row="3">
                     <TextBox Grid.Column="0" Grid.Row="3" Margin="130,15,130,0" BorderBrush="AliceBlue" CaretBrush="AliceBlue" Foreground="AliceBlue"/>
             </StackPanel>
 
                 <StackPanel Grid.Column="0" Grid.Row="4">
-            <Button  Grid.Column="0" Grid.Row="3" Background="#181735" BorderBrush="AliceBlue"
+                    <Button  Grid.Column="0" Grid.Row="3" Background="#181735" BorderBrush="AliceBlue"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}" 
                         Margin="130,15,130,0" 
                         materialDesign:ButtonAssist.CornerRadius="15" Content="SEND CODE" FontStyle="Italic" Click="Button_Click">

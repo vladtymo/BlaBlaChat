@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,9 +21,14 @@ namespace Client
     /// </summary>
     public partial class PageEnterCodeEmail : Page
     {
+        
+        
         public PageEnterCodeEmail()
         {
             InitializeComponent();
+            // this.DataContext = new ViewModel();
+           // StartTimer();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
