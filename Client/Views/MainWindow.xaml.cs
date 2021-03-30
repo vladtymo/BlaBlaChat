@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,21 +16,17 @@ using System.Windows.Shapes;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for PageRegistry.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
-
-    public partial class PageRegistry : Page
+    public partial class MainWindow : Window
     {
-       
-
-       
-        public PageRegistry()
+        public MainWindow()
         {
-           
             InitializeComponent();
-            this.DataContext = new RegistryViewModel();
-           
+
+
+            frame.NavigationService.Navigate(new PageAutorizationEnterSendEmail(frame.NavigationService));
+            
         }
     }
 }

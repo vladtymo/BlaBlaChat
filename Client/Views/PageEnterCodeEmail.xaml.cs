@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,17 +24,13 @@ namespace Client
     {
         
         
-        public PageEnterCodeEmail()
+        public PageEnterCodeEmail(NavigationService navigationService)
         {
             InitializeComponent();
-            // this.DataContext = new ViewModel();
-           // StartTimer();
+            this.DataContext = new PageEnterCodeViewModel(navigationService);
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.Navigate(new PageAutorizationEnterSendEmail());
-        }
+       
     }
 }

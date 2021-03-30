@@ -42,7 +42,7 @@ namespace Client
                 DateTimeStyles.AssumeLocal | DateTimeStyles.AllowWhiteSpaces,
                 out time)) return new ValidationResult(false, "");
 
-            return time.Date ==null
+            return time.Date.ToString() == " "
                 ? new ValidationResult(false, "")
                 : ValidationResult.ValidResult;
         }

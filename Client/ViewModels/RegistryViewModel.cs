@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Windows.Navigation;
 
 namespace Client
 {
     public class RegistryViewModel:ViewModelBase
     {
+        NavigationService NavigationService;
         private ICollection<string> months = new ObservableCollection<string>();
         public IEnumerable<string> Months => months;
-        public RegistryViewModel()
+        public RegistryViewModel(NavigationService navigationService)
         {
+            NavigationService = navigationService;
             months = new ObservableCollection<string>(DateTimeFormatInfo.CurrentInfo.MonthNames); 
         }
         private string? _mail;
 
-
+        //????? what this??
         public string? Mail
         {
             get => _mail;
