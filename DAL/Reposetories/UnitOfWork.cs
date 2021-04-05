@@ -13,7 +13,7 @@ namespace DAL.Reposetories
         private ChatDatabaseModel context;
 
         private GenericRepository<User> userRepository = null;
-        private GenericRepository<Messages> messageRepository = null;
+        private GenericRepository<Message> messageRepository = null;
         private GenericRepository<Chat> chatReposetory = null;
 
         public UnitOfWork(ChatDatabaseModel context)
@@ -37,12 +37,12 @@ namespace DAL.Reposetories
             }
         }
 
-        public IRepository<Messages> MessageRepository
+        public IRepository<Message> MessageRepository
         {
             get
             {
                 if (messageRepository == null)
-                    messageRepository = new GenericRepository<Messages>(context);
+                    messageRepository = new GenericRepository<Message>(context);
                 return messageRepository;
             }
         }
@@ -56,7 +56,7 @@ namespace DAL.Reposetories
             }
         }
 
-        public IRepository<Messages> MessagesRepository => throw new NotImplementedException();
+        public IRepository<Message> MessagesRepository => throw new NotImplementedException();
 
         public IRepository<Chat> ChatReposetory => throw new NotImplementedException();
 

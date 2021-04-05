@@ -38,7 +38,7 @@
 
 
             <StackPanel Grid.Column="0" Grid.Row="3">
-                    <TextBox Grid.Column="0" Grid.Row="3" Margin="130,15,130,0" BorderBrush="AliceBlue" CaretBrush="AliceBlue" Foreground="AliceBlue"/>
+            <TextBox Grid.Column="0" Grid.Row="3" Margin="130,15,130,0" BorderBrush="AliceBlue" CaretBrush="AliceBlue" Foreground="AliceBlue" Text="{Binding Email}" materialDesign:HintAssist.Hint="Email"/>
             </StackPanel>
 
                 <StackPanel Grid.Column="0" Grid.Row="4">
@@ -47,7 +47,6 @@
                         Margin="130,15,130,0" 
                         materialDesign:ButtonAssist.CornerRadius="15" Content="SEND CODE" FontStyle="Italic"  Command="{Binding SendCodeCommand}" >
                     </Button>
-
                 </StackPanel>
 
            

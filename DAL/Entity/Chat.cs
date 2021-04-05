@@ -13,6 +13,6 @@ namespace Dal
         //FK
         //NAV
         public virtual ICollection<User> Users { get; set; }
-        public virtual ICollection<Messages> Messages { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

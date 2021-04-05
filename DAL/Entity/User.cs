@@ -13,7 +13,7 @@ namespace Dal
             this.Chats = new HashSet<Chat>();
             this.MyContacts = new HashSet<User>();
             this.Users = new HashSet<User>();
-            this.Messages = new HashSet<Messages>();
+            this.Messages = new HashSet<Message>();
         }
 
 
@@ -24,13 +24,13 @@ namespace Dal
         public string Email { get; set; }
         public string AvatarLink { get; set; }
         public DateTime BirthDate { get; set; }
-
+        public string Bio { get; set; }
 
         //FK
         //NAV
         public virtual ICollection<Chat> Chats { get; set; }
-        public virtual ICollection<User> MyContacts { get; set; }
-        public virtual ICollection<User> Users { get; set; }//в кого цей юзер в контактах
-        public virtual ICollection<Messages> Messages { get; set; }
+        public virtual ICollection<User> MyContacts { get; set; } 
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

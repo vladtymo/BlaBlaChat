@@ -11,7 +11,7 @@ namespace DAL.Interfaces
     {
         // репозиторії таблиць
         IRepository<User> UsertRepository { get; }
-        IRepository<Messages> MessagesRepository { get; }
+        IRepository<Message> MessagesRepository { get; }
         IRepository<Chat> ChatReposetory { get; }
         // метод для збереження змін в базі даних
         void Save();

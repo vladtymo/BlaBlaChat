@@ -12,12 +12,12 @@ namespace Server
     {
         public static void Main(string[] args)
         {
-            //test DB
-            //foreach (var user in new Dal.DatabaseModel().Users.ToList())
+            ////test DB
+            //foreach (var user in new Dal.ChatDatabaseModel().Users.ToList())
             //{
             //    Console.WriteLine(user.Email);
             //}
-            //CreateHostBuilder(args).Build().Run();
+             CreateHostBuilder(args).Build().Run();
         }
 
         // Additional configuration is required to successfully run gRPC on macOS.

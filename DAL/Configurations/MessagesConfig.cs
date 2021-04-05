@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal.Configurations
 {
-    class MessagesConfig : EntityTypeConfiguration<Messages>
+    class MessagesConfig : EntityTypeConfiguration<Message>
     {
         public MessagesConfig()
         {

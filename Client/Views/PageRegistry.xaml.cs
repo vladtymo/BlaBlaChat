@@ -20,14 +20,11 @@ namespace Client
 
     public partial class PageRegistry : Page
     {
-       
-
-       
-        public PageRegistry(NavigationService navigationService)
+        public PageRegistry(NavigationService navigationService, string email)
         {
            
             InitializeComponent();
-            this.DataContext = new RegistryViewModel(navigationService);
+            this.DataContext = new RegistryViewModel(navigationService,email);
            
         }
     }
