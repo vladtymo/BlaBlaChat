@@ -57,11 +57,11 @@ namespace DAL.Reposetories
         public virtual TEntity GetById(int id)
         {
 
+
             return dbSet.Find(id);
 
         }
-
-
+         
 
 
         public virtual TEntity Insert(TEntity entity)
