@@ -34,10 +34,9 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Column="0" Grid.Row="3">
-                <TextBox x:Name="tbBox" Margin="130,1,130,0" BorderBrush="AliceBlue" Foreground="AliceBlue" Cursor="IBeam"/>
+                <TextBox x:Name="tbBox" Margin="130,1,130,0" BorderBrush="AliceBlue" Foreground="AliceBlue" Cursor="IBeam" Text="{Binding Code}"/>
                 <Label Margin="130,5,130,0" Height="30" Style="{StaticResource MaterialDesignLabel}" Foreground="AliceBlue" Content="{Binding Time}"/>
             </StackPanel>
-
             <StackPanel Grid.Column="0" Grid.Row="4">
                 <Button  Background="#181735" BorderBrush="AliceBlue"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}" 

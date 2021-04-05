@@ -1,4 +1,5 @@
 ﻿using Client.Command;
+using Client.Models.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,18 +10,18 @@ using System.Windows.Navigation;
 
 namespace Client.ViewModels
 {
-   public class PageEnterEmailViewModel : ViewModelBase
-   {
+    public class PageEnterEmailViewModel : ViewModelBase
+    {
 
 
         private Command.Command _sendCodeCommand;
 
-        private string? _mail;
+        private string _email;
 
-        public string? Mail
+        public string Email
         {
-            get => _mail;
-            set => SetProperty(ref _mail, value);
+            get => _email;
+            set => SetProperty(ref _email, value);
         }
         NavigationService NavigationService;
         public PageEnterEmailViewModel(NavigationService navigationService)
@@ -28,11 +29,11 @@ namespace Client.ViewModels
             NavigationService = navigationService;
             _sendCodeCommand = new DelegateCommand(SendCode);
         }
-        private void SendCode()
+        private async void SendCode()
         {
-            NavigationService.Navigate(new PageEnterCodeEmail(NavigationService));
+            NavigationService.Navigate(new PageEnterCodeEmail(NavigationService,AuthenticationServise.SendConfirmCodeAsync(Email), Email));
         }
         public ICommand SendCodeCommand => _sendCodeCommand;
 
-   }
+    }
 }

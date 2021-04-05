@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class Messages
+    public class Message
     {
         public int Id { get; set; }
         public string Text { get; set; }
@@ -17,7 +17,6 @@ namespace Dal
         public int UserID { get; set; }
         //NAV
         public virtual Chat Chat { get; set; }
-        public virtual User User { get; set; }
-
+        public virtual User User { get; set; }//відправник
     }
 }

@@ -22,15 +22,14 @@ namespace Client
     /// </summary>
     public partial class PageEnterCodeEmail : Page
     {
-        
-        
-        public PageEnterCodeEmail(NavigationService navigationService)
+
+
+        public PageEnterCodeEmail(NavigationService navigationService, Task<TimeSpan> timeSpan,string email)
         {
             InitializeComponent();
-            this.DataContext = new PageEnterCodeViewModel(navigationService);
-
+            this.DataContext = new PageEnterCodeViewModel(navigationService, timeSpan,email);
         }
 
-       
+
     }
 }

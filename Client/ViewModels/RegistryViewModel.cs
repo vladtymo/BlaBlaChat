@@ -1,24 +1,29 @@
 ﻿using Client.Command;
+using Client.Models.Services;
+using Google.Protobuf.WellKnownTypes;
+using GrpcChatService;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
 namespace Client
 {
-    public class RegistryViewModel:ViewModelBase
+    public class RegistryViewModel : ViewModelBase
     {
         NavigationService NavigationService;
         private Command.Command _nextCommand;
         private Command.Command _addPictures;
         private ICollection<string> months = new ObservableCollection<string>();
         public IEnumerable<string> Months => months;
-        public RegistryViewModel(NavigationService navigationService)
+        public RegistryViewModel(NavigationService navigationService,string email)
         {
+            Email = email;
             NavigationService = navigationService;
             months = new ObservableCollection<string>(DateTimeFormatInfo.CurrentInfo.MonthNames);
             _nextCommand = new DelegateCommand(Save_Executed, Save_CanExecute);
@@ -30,11 +35,11 @@ namespace Client
         }
         public ICommand AddPictures => _addPictures;
         public ICommand NextCommand => _nextCommand;
-        private string? _mail;
-        public string? Mail
+        private string? _email;
+        public string? Email
         {
-            get => _mail;
-            set => SetProperty(ref _mail, value);
+            get => _email;
+            set => SetProperty(ref _email, value);
         }
         private string? _name;
         public string? Name
@@ -78,16 +83,17 @@ namespace Client
                 Picture = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Relative));
             }
         }
-        private void Save_Executed()
+        private async void Save_Executed()
         {
-
+            RegistrationRequest registrationRequest=new RegistrationRequest() {Name=Name,Surname=Surname,Nickname=Nickname,BirthDate= Timestamp.FromDateTime(ValidatingDate.Value.ToUniversalTime()),Email=Email};
+            MessageBox.Show((await AuthenticationServise.Registration(registrationRequest)).ToString());
         }
         private bool Save_CanExecute()
         {
             return !(string.IsNullOrEmpty(Name)
                 || string.IsNullOrEmpty(Surname)
                 || string.IsNullOrEmpty(Nickname)
-                || string.IsNullOrEmpty(ValidatingDate.ToString())||Picture==null);
+                || string.IsNullOrEmpty(ValidatingDate.ToString()) || Picture == null);
         }
     }
 }

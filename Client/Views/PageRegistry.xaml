@@ -37,12 +37,12 @@
               Foreground="White" 
                  FontSize="30"
               materialDesign:ValidationAssist.Background="Transparent"   
-              materialDesign:HintAssist.Hint="Mail"
+              materialDesign:HintAssist.Hint="Email"
               materialDesign:HintAssist.HelperText="">
-              
+
             <TextBox.Text>
                 <Binding
-                    Path="Mail"
+                    Path="Email"
                     UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
                         <local:MailValidationRule 
@@ -113,7 +113,7 @@
                 materialDesign:HintAssist.Hint="Date"
                 materialDesign:CalendarAssist.IsHeaderVisible="False"
                 materialDesign:ValidationAssist.Background="Transparent">
-                
+
             <DatePicker.SelectedDate>
                 <Binding
                     Path="ValidatingDate"
@@ -141,7 +141,6 @@
         <Border Grid.Column="2" Grid.RowSpan="3" CornerRadius="40" Margin="5">
             <Border.Background>
                 <ImageBrush ImageSource="{Binding Picture}">
-                    
                 </ImageBrush>
             </Border.Background>
         </Border>

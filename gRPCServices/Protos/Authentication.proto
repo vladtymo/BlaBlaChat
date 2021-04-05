@@ -1,0 +1,70 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GrpcChatService";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+package Authentication;
+
+service Authentication {
+  rpc SendConfirmCode (SendConfirmCodeRequest) returns (SendConfirmCodeResponse);
+  rpc CheckConfirmCode (CheckConfirmCodeRequest)returns(CheckConfirmCodeResponse);
+  rpc FindNickname (FindNicknameRequest) returns (FindNicknameResponse);
+  rpc Registration (RegistrationRequest) returns (RegistrationResponse);
+  rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}
+message SendConfirmCodeRequest{
+  string Email = 1;
+}
+message SendConfirmCodeResponse{
+  google.protobuf.Timestamp TimeSendConfirmCode=1;
+}
+message CheckConfirmCodeRequest{
+  string Code=1;
+}
+message CheckConfirmCodeResponse{
+    enum StatusCheckCode
+    {
+    Incorrect = 0;
+    UserNotFound = 1;
+    Authenticated = 2;
+    }
+  StatusCheckCode Status=1;
+  int32 IdUser=2;
+}
+message FindNicknameRequest
+{
+string Nickname=4;
+}
+message FindNicknameResponse
+{
+bool Response=1;
+}
+message RegistrationRequest
+{
+string Email=1;
+string Name=2;
+string Surname=3;
+string Nickname=4;
+google.protobuf.Timestamp BirthDate=5;
+string Bio=6;
+//BitmapImage Picture=7; add image
+}
+message RegistrationResponse
+{
+  int32 IdUser=1;
+}
+message GetUserRequest
+{
+  int32 IdUser=1;
+}
+message GetUserResponse
+{
+string Email=1;
+string Name=2;
+string Surname=3;
+string Nickname=4;
+google.protobuf.Timestamp BirthDate=5;
+string Bio=6;
+//BitmapImage Picture=7; add image
+}
+//Request-запит
+//Response-відповідь
