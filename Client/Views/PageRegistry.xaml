@@ -141,7 +141,6 @@
         <Border Grid.Column="2" Grid.RowSpan="3" CornerRadius="40" Margin="5">
             <Border.Background>
                 <ImageBrush ImageSource="{Binding Picture}">
-
                 </ImageBrush>
             </Border.Background>
         </Border>
