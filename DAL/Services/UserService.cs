@@ -1,5 +1,6 @@
 ﻿using Dal;
 using DAL.Interfaces;
+using DAL.Reposetories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace DAL.Services
 {
    public class UserService 
    {
-        IUnitOfWork _unitOfWork;
+        IUnitOfWork _unitOfWork=new UnitOfWork(new ChatDatabaseModel());
 
 
         /// methods for getting user info

@@ -1,5 +1,6 @@
 ﻿using Dal;
 using GrpcChatService;
+using GrpcUserProfileService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,8 @@ namespace Server
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<AuthenticationService>();
+                endpoints.MapGrpcService<UserProfileService>();
+
 
                 endpoints.MapGet("/", async context =>
                 {

@@ -1,0 +1,18 @@
+﻿syntax = "proto3";
+option csharp_namespace = "GrpcUserProfileService";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+package UserProfile;
+service UserProfile {
+    rpc IsExistNickname (IsExistNicknameRequest) returns (IsExistNicknameResponse);
+}
+message IsExistNicknameRequest
+{
+string Nickname=1;
+}
+message IsExistNicknameResponse
+{
+bool Response=1;
+}
+//Request-запит
+//Response-відповідь

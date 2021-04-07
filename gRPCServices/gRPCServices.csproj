@@ -6,6 +6,8 @@
 
   <ItemGroup>
 	  <Protobuf Include="Protos\Authentication.proto" GrpcServices="Client" />
+	  <Protobuf Include="Protos\EditUser.proto" GrpcServices="Client" />
+
 
 	  <PackageReference Include="Google.Protobuf" Version="3.15.6" />
     <PackageReference Include="Grpc" Version="2.36.4" />
