@@ -1,44 +1,44 @@
-﻿<Page x:Class="Client.PageRegistry"
+﻿<Page x:Class="Client.PageUserProfile"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Client"
-      xmlns:domein="clr-namespace:Client"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageRegistry"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=local:RegistryViewModel}"
+      Title="PageUserProfile"
+       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=local:RegistryViewModel}"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
      TextElement.FontWeight="Regular"
      TextElement.FontSize="13"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
+     Background="Transparent"
      FontFamily="{DynamicResource MaterialDesignFont}">
 
-    <Grid Background="#181735">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="38*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="69*"/>
-        </Grid.RowDefinitions>
 
+    <Grid Background="White" Margin="100,20,100,20" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="131*"/>
+            
+            <ColumnDefinition Width="131*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" IsReadOnly="True"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="68*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="118*"/>
+        </Grid.RowDefinitions>
+        <TextBox VerticalAlignment="Center" IsReadOnly="True"
               x:Name="tbMail"
-              Foreground="White" 
-                 FontSize="30"
+              Foreground="Black" 
+                 FontSize="15"
               materialDesign:ValidationAssist.Background="Transparent"   
               materialDesign:HintAssist.Hint="Email"
-              materialDesign:HintAssist.HelperText="">
+              materialDesign:HintAssist.HelperText="" Grid.Column="1">
 
             <TextBox.Text>
                 <Binding
@@ -51,10 +51,10 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="1" Margin="5"
+        <TextBox Grid.Row="1" VerticalAlignment="Center" Grid.Column="1"
               x:Name="tbName"
-              Foreground="White" 
-                 FontSize="25"
+              Foreground="Black" 
+                 FontSize="15"
               materialDesign:ValidationAssist.Background="Transparent"   
               materialDesign:HintAssist.Hint="Name"
               materialDesign:HintAssist.HelperText="">
@@ -70,10 +70,10 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="1" Margin="5"
+        <TextBox Grid.Row="2" VerticalAlignment="Center" Grid.Column="1"
               x:Name="tbSurname"
-              Foreground="White" 
-                 FontSize="25"
+              Foreground="Black" 
+                 FontSize="15"
               materialDesign:ValidationAssist.Background="Transparent"   
               materialDesign:HintAssist.Hint="Surname"
               materialDesign:HintAssist.HelperText="">
@@ -89,13 +89,13 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center"  Margin="5"
+        <TextBox Grid.Row="3" VerticalAlignment="Center"  Grid.Column="1"
               x:Name="tbNickName"
-              Foreground="White" 
-                 FontSize="25"
+              Foreground="Black" 
+                 FontSize="15"
               materialDesign:ValidationAssist.Background="Transparent"   
               materialDesign:HintAssist.Hint="Nickname"
-              materialDesign:HintAssist.HelperText="">
+              materialDesign:HintAssist.HelperText="" >
 
             <TextBox.Text>
                 <Binding
@@ -108,10 +108,10 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <DatePicker Grid.Row="3" Grid.ColumnSpan="2"  Foreground="Black" FontSize="25"
+        <DatePicker Grid.Row="4" 
             materialDesign:HintAssist.Hint="Birth Date"
-            materialDesign:ValidationAssist.Background="Transparent"
-               Style="{StaticResource MaterialDesignOutlinedDatePicker}">
+                    materialDesign:ValidationAssist.Background="Transparent"
+               Style="{StaticResource MaterialDesignOutlinedDatePicker}" Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding
                     Path="ValidatingDate"
@@ -123,24 +123,23 @@
                 </Binding>
             </DatePicker.SelectedDate>
         </DatePicker>
-        <TextBox Grid.Row="4" Foreground="White" FontSize="20" BorderBrush="White" Grid.ColumnSpan="2" Text="{Binding Bio}"
+        <TextBox Grid.Row="5" Foreground="Black" FontSize="12" BorderBrush="Purple" Text="{Binding Bio}" Grid.Column="1"
               TextWrapping="Wrap"
-              VerticalAlignment="Stretch"
               MinWidth="280"
               AcceptsReturn="True"
               VerticalScrollBarVisibility="Auto"
               SpellCheck.IsEnabled="True"
               materialDesign:HintAssist.Hint="Bio"
-              Height="80"></TextBox>
-        <Button Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" Background="Transparent" FontSize="25" Height="50" 
-                materialDesign:ButtonAssist.CornerRadius="25" Command="{Binding AddPictures}">Add pictures</Button>
-        <Button Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" Background="Transparent" FontSize="50" Height="95" 
-                materialDesign:ButtonAssist.CornerRadius="25" Command="{Binding NextCommand}">Next</Button>
-        <Border Grid.Column="2" Grid.RowSpan="3" CornerRadius="40" Margin="5">
+              Height="80"/>
+        <Border Grid.Row="0" Grid.Column="0"  CornerRadius="90" Grid.RowSpan="4" >
             <Border.Background>
                 <ImageBrush ImageSource="{Binding Picture}">
                 </ImageBrush>
             </Border.Background>
         </Border>
+        <Button Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"  FontSize="20" Height="50" Width="200" 
+                materialDesign:ButtonAssist.CornerRadius="25" Command="{Binding AddPictures}" >Add pictures</Button>
+        <Button Grid.Column="0" Grid.Row="5" VerticalAlignment="Center"  FontSize="25" Height="70" Width="200"
+                materialDesign:ButtonAssist.CornerRadius="25" Command="{Binding NextCommand}" >Save</Button>
     </Grid>
 </Page>
