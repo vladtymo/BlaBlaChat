@@ -1,40 +1,38 @@
 ﻿using Client.Command;
 using Client.Models.Services;
-using Google.Protobuf.WellKnownTypes;
 using GrpcChatService;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 
-namespace Client
+namespace Client.ViewModels
 {
-    public class RegistryViewModel : ViewModelBase
+    class EditProfileViewModel:ViewModelBase
     {
         NavigationService NavigationService;
-        private Command.Command _nextCommand;
+        private Command.Command _saveCommand;
         private Command.Command _addPictures;
-        private ICollection<string> months = new ObservableCollection<string>();
-        public IEnumerable<string> Months => months;
-        public RegistryViewModel(NavigationService navigationService,string email)
+      
+        public EditProfileViewModel()
         {
-            Email = email;
-            NavigationService = navigationService;
-            months = new ObservableCollection<string>(DateTimeFormatInfo.CurrentInfo.MonthNames);
-            _nextCommand = new DelegateCommand(Save_Executed, Save_CanExecute);
+           
+            _saveCommand = new DelegateCommand(Save_Executed, Save_CanExecute);
             PropertyChanged += (s, args) =>
             {
-                _nextCommand.RaiseCanExecuteChanged();
+                _saveCommand.RaiseCanExecuteChanged();
             };
             _addPictures = new DelegateCommand(OpenFileDialog_);
         }
         public ICommand AddPictures => _addPictures;
-        public ICommand NextCommand => _nextCommand;
+        public ICommand NextCommand => _saveCommand;
         private string? _email;
         public string? Email
         {
@@ -91,8 +89,7 @@ namespace Client
         }
         private async void Save_Executed()
         {
-            RegistrationRequest registrationRequest=new RegistrationRequest() {Name=Name,Surname=Surname,Nickname=Nickname,BirthDate= Timestamp.FromDateTime(ValidatingDate.Value.ToUniversalTime()),Email=Email,Bio=Bio};
-            MessageBox.Show((await AuthenticationServise.Registration(registrationRequest)).ToString());
+           
         }
         private bool Save_CanExecute()
         {

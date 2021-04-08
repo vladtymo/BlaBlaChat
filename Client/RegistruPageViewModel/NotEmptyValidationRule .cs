@@ -32,6 +32,15 @@ namespace Client
                 : ValidationResult.ValidResult;
         }
     }
+    public class ValidationRuleNickName : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            return string.IsNullOrWhiteSpace((value ?? "").ToString())
+                ? new ValidationResult(false, "")
+                : ValidationResult.ValidResult;
+        }
+    }
     public class DateValidationRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)

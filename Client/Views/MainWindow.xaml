@@ -17,9 +17,9 @@
     <Grid>
 
         <Frame Background="White" x:Name="frame" NavigationUIVisibility="Hidden">
+        </Frame>
 
             
 
-        </Frame>
     </Grid>
 </Window>

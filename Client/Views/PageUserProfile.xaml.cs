@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,17 +17,14 @@ using System.Windows.Shapes;
 namespace Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PageUserProfile.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PageUserProfile : Page
     {
-        public MainWindow()
+        public PageUserProfile()
         {
             InitializeComponent();
-            frame.NavigationService.Navigate(new PageAutorizationEnterSendEmail(frame.NavigationService));
+            this.DataContext = new EditProfileViewModel();
         }
-
     }
 }
-
-            

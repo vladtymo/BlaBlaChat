@@ -35,5 +35,6 @@ namespace Client.Models.Services
             RegistrationResponse response = await client.RegistrationAsync(registrationRequest);
             return response.IdUser;
         }
+
     }
 }

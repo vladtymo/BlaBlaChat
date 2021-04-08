@@ -45,8 +45,8 @@ namespace DAL.Services
         public bool IsExistNickName(string NickName)
         {
             return _unitOfWork.UsertRepository.Get(x => x.Nickname == NickName).FirstOrDefault() != null;
-            
         }
+            
         /// methods for editing user info
         public void ChangeNickNameUser(int IdUser,string NewNickName)
         {
