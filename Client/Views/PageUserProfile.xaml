@@ -13,7 +13,7 @@
      TextElement.FontSize="13"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
-     Background="Transparent"
+     Background="#A50C0A0A"
      FontFamily="{DynamicResource MaterialDesignFont}">
 
 
@@ -100,7 +100,7 @@
             <TextBox.Text>
                 <Binding
                     Path="Nickname"
-                    UpdateSourceTrigger="PropertyChanged">
+                    UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <local:ValidationRuleNickName
                               ValidatesOnTargetUpdated="True"  xmlns:domain="clr-namespace:Client" />
@@ -110,8 +110,8 @@
         </TextBox>
         <DatePicker Grid.Row="4" 
             materialDesign:HintAssist.Hint="Birth Date"
-                    materialDesign:ValidationAssist.Background="Transparent"
-               Style="{StaticResource MaterialDesignOutlinedDatePicker}" Grid.Column="1">
+            materialDesign:ValidationAssist.Background="Transparent"
+            Style="{StaticResource MaterialDesignOutlinedDatePicker}" Grid.Column="1">
             <DatePicker.SelectedDate>
                 <Binding
                     Path="ValidatingDate"

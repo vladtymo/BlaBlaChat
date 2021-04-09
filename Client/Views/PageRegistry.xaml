@@ -100,7 +100,7 @@
             <TextBox.Text>
                 <Binding
                     Path="Nickname"
-                    UpdateSourceTrigger="PropertyChanged">
+                    UpdateSourceTrigger="LostFocus">
                     <Binding.ValidationRules>
                         <local:ValidationRuleNickName
                               ValidatesOnTargetUpdated="True"  xmlns:domain="clr-namespace:Client" />
