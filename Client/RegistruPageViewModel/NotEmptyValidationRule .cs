@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.Models.Services;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -36,8 +37,12 @@ namespace Client
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
-            return string.IsNullOrWhiteSpace((value ?? "").ToString())
-                ? new ValidationResult(false, "")
+            if (string.IsNullOrEmpty(value?.ToString()))
+            {
+                return new ValidationResult(false, "");
+            }
+            return value.ToString()!="hello" /*UserProfileService.IsExistNicknameAsync((value??"").ToString()).Result*/
+                ? new ValidationResult(false, "This nickname is already in use ")
                 : ValidationResult.ValidResult;
         }
     }
